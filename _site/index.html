@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Quantomatic :: Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Quantomatic</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contribute.html">Contribute</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+  <h1>Quantomatic</h1>
+  <p>Quantomatic is a tool (or really, a collection of tools) that provides machine-support for reasoning with <i>diagrammatic languages</i>. The main tool <b>QuantoDerive</b> is a derivation editor. It allows users to draw diagrams and build up proofs using graph rewrite rules. It's easier to show you what that means, so download it and follow along. Sorry no Windows version yet. :(</p>
+  <p style="line-height: 2.5em">
+  <a href="https://github.com/Quantomatic/quantomatic/releases/download/derive-v0.1.0/QuantoDerive-osx.zip" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-download-alt"></span> Download for OS X</a>
+  <a href="https://github.com/Quantomatic/quantomatic/releases/download/derive-v0.1.0/QuantoDerive-linux.tar.gz" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-download-alt"></span> Download for Linux</a>
+  <a href="https://github.com/Quantomatic/quantomatic" class="btn btn-lg btn-success" role="button">GitHub Project &raquo;</a></p>
+</div>
+
+<h1>Quick Start</h1>
+
+<h2>Setup</h2>
+
+<p>The only thing you will need to have installed is the Java Runtime version 6 or later (which is also sometimes called version 1.6). Older versions of OS X come with Java pre-loaded, but for Lion or later, you will need to <a href="http://support.apple.com/kb/DL1572?viewlocale=en_US">install it yourself</a>. On Linux, you should be able to install Java using your package manager. To confirm it is set up correctly, check the output of <code>java -version</code> from the terminal.</p>
+
+<p><b>For Linux:</b> download the Linux bundle above, extract anywhere, and run <code>quanto-derive.sh</code>, either from the terminal or by double-clicking it in your file browser.</p>
+
+<p><b>For OS X:</b> download the OS X bundle above and extract it. The first time you run the Mac app on OS X Lion or later, you may need to run it by right-clicking, and clicking on <code>Open</code>, at which point it will complain about coming from an unknown developer. Allow it to open, and you should be able to run it as usual from then on.</p>
+
+<p><b>From source:</b> To build QuantoDerive from source, you will need: Java 6 or above, standard GNU developer tools (make, gcc, etc.), <a href="http://git-scm.com/">git</a>, <a href="http://www.scala-sbt.org/">sbt</a>, and <a href="http://www.polyml.org/">Poly/ML</a>. You will then need to clone Quantomatic, and its dependant library isaplib into the same directory, build the Quantomatic core using the <code>Makefile</code>, and build/run the frontend using sbt.</p>
+
+<pre>
+git clone git://github.com/Quantomatic/isaplib.git
+git clone git://github.com/Quantomatic/quantomatic.git -b integration
+cd quantomatic/core
+make
+cd ../scala
+sbt run
+</pre>
+
+<p>You will see a number of options once <code>sbt run</code> is complete. Choose QuantoDerive.</p>
+
+<h2>A sample project</h2>
+
+<p>To start experimenting with QuantoDerive, you can clone the sample project from GitHub or download it as a zip file.</p>
+
+<p>
+  <a href="https://github.com/Quantomatic/qderive-sample/archive/master.zip" class="btn btn-default" role="button"><span class="glyphicon glyphicon-download-alt"></span> Download zip</a>
+  <a href="https://github.com/Quantomatic/qderive-sample" class="btn btn-default" role="button">Clone from GitHub &raquo;</a>
+</p>
+
+<p>Once you clone (or download and unzip) the sample project, open it in QuantoDerive with <code>File > Open Project...</code> by selecting (or navigating to) the <i>directory</i> in the file browser and clicking <code>Open</code>.</p>
+
+<p>From there, try opening graphs, rules, and derivations, and...experiment! See what happens when you click on the white dots in a derivation (these are called &quot;proof heads&quot;) and add some rewrite rules with the Rewrite panel. Install simplification procedures (or &quot;simprocs&quot;) by opening them and clicking <img src="images/gui/start.png" />. These will then become available when you click <img src="images/gui/view-refresh.png" /> in the Simplify panel of the derivation editor.</p>
+
+
+<!-- <h1>News</h1>
+<ul class="posts">
+  
+    <li><span>23 Apr 2014</span> &raquo; <a href="/jekyll/update/2014/04/23/welcome-to-jekyll.html">Welcome to Jekyll!</a></li>
+  
+</ul> -->
+
+    <hr />
+    <p><i>Copyright &copy; 2014. Quantomatic project.</i></p>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+  </body>
+</html>

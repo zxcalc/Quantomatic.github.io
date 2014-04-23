@@ -1,0 +1,57 @@
+---
+layout: default
+title: Home
+---
+
+<div class="jumbotron">
+  <h1>Quantomatic</h1>
+  <p>Quantomatic is a tool (or really, a collection of tools) that provides machine-support for reasoning with <i>diagrammatic languages</i>. The main tool <b>QuantoDerive</b> is a derivation editor. It allows users to draw diagrams and build up proofs using graph rewrite rules. It's easier to show you what that means, so download it and follow along. Sorry no Windows version yet. :(</p>
+  <p style="line-height: 2.5em">
+  <a href="https://github.com/Quantomatic/quantomatic/releases/download/derive-v0.1.0/QuantoDerive-osx.zip" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-download-alt"></span> Download for OS X</a>
+  <a href="https://github.com/Quantomatic/quantomatic/releases/download/derive-v0.1.0/QuantoDerive-linux.tar.gz" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-download-alt"></span> Download for Linux</a>
+  <a href="https://github.com/Quantomatic/quantomatic" class="btn btn-lg btn-success" role="button">GitHub Project &raquo;</a></p>
+</div>
+
+<h1>Quick Start</h1>
+
+<h2>Setup</h2>
+
+<p>The only thing you will need to have installed is the Java Runtime version 6 or later (which is also sometimes called version 1.6). Older versions of OS X come with Java pre-loaded, but for Lion or later, you will need to <a href="http://support.apple.com/kb/DL1572?viewlocale=en_US">install it yourself</a>. On Linux, you should be able to install Java using your package manager. To confirm it is set up correctly, check the output of <code>java -version</code> from the terminal.</p>
+
+<p><b>For Linux:</b> download the Linux bundle above, extract anywhere, and run <code>quanto-derive.sh</code>, either from the terminal or by double-clicking it in your file browser.</p>
+
+<p><b>For OS X:</b> download the OS X bundle above and extract it. The first time you run the Mac app on OS X Lion or later, you may need to run it by right-clicking, and clicking on <code>Open</code>, at which point it will complain about coming from an unknown developer. Allow it to open, and you should be able to run it as usual from then on.</p>
+
+<p><b>From source:</b> To build QuantoDerive from source, you will need: Java 6 or above, standard GNU developer tools (make, gcc, etc.), <a href="http://git-scm.com/">git</a>, <a href="http://www.scala-sbt.org/">sbt</a>, and <a href="http://www.polyml.org/">Poly/ML</a>. You will then need to clone Quantomatic, and its dependant library isaplib into the same directory, build the Quantomatic core using the <code>Makefile</code>, and build/run the frontend using sbt.</p>
+
+<pre>
+git clone git://github.com/Quantomatic/isaplib.git
+git clone git://github.com/Quantomatic/quantomatic.git -b integration
+cd quantomatic/core
+make
+cd ../scala
+sbt run
+</pre>
+
+<p>You will see a number of options once <code>sbt run</code> is complete. Choose QuantoDerive.</p>
+
+<h2>A sample project</h2>
+
+<p>To start experimenting with QuantoDerive, you can clone the sample project from GitHub or download it as a zip file.</p>
+
+<p>
+  <a href="https://github.com/Quantomatic/qderive-sample/archive/master.zip" class="btn btn-default" role="button"><span class="glyphicon glyphicon-download-alt"></span> Download zip</a>
+  <a href="https://github.com/Quantomatic/qderive-sample" class="btn btn-default" role="button">Clone from GitHub &raquo;</a>
+</p>
+
+<p>Once you clone (or download and unzip) the sample project, open it in QuantoDerive with <code>File > Open Project...</code> by selecting (or navigating to) the <i>directory</i> in the file browser and clicking <code>Open</code>.</p>
+
+<p>From there, try opening graphs, rules, and derivations, and...experiment! See what happens when you click on the white dots in a derivation (these are called &quot;proof heads&quot;) and add some rewrite rules with the Rewrite panel. Install simplification procedures (or &quot;simprocs&quot;) by opening them and clicking <img src="images/gui/start.png" />. These will then become available when you click <img src="images/gui/view-refresh.png" /> in the Simplify panel of the derivation editor.</p>
+
+
+<!-- <h1>News</h1>
+<ul class="posts">
+  {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul> -->
