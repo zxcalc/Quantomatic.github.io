@@ -22,7 +22,7 @@ title: Home
 
 <p><b>For OS X:</b> download the OS X bundle above and extract it. The first time you run the Mac app on OS X Lion or later, you may need to run it by right-clicking, and clicking on <code>Open</code>, at which point it will complain about coming from an unknown developer. Allow it to open, and you should be able to run it as usual from then on.</p>
 
-<p><b>From source:</b> To build QuantoDerive from source, you will need: Java 6 or above, standard GNU developer tools (make, gcc, etc.), <a href="http://git-scm.com/">git</a>, <a href="http://www.scala-sbt.org/">sbt</a>, and <a href="http://www.polyml.org/">Poly/ML</a>. You will then need to clone Quantomatic, and its dependant library isaplib into the same directory, build the Quantomatic core using the <code>Makefile</code>, and build/run the frontend using sbt.</p>
+<p><b>From source:</b> To build QuantoDerive from source, you will need: a recent JDK (&gt;= 6), standard GNU developer tools (make, gcc, etc.), <a href="http://git-scm.com/">git</a>, <a href="http://www.scala-sbt.org/">sbt</a>, and <a href="http://www.polyml.org/">Poly/ML</a>. You will then need to clone Quantomatic, and its dependant library isaplib into the same directory, build the Quantomatic core using the <code>Makefile</code>, and build/run the frontend using sbt.</p>
 
 <pre>
 git clone git://github.com/Quantomatic/isaplib.git
@@ -33,7 +33,7 @@ cd ../scala
 sbt run
 </pre>
 
-<p>You will see a number of options once <code>sbt run</code> is complete. Choose QuantoDerive.</p>
+<p>You will see a number of options once <code>sbt run</code> is complete. Choose QuantoDerive to get the main GUI. For scala development in <a href="http://www.jetbrains.com/idea/">Intellij IDEA</a>, create a project with <code>sbt gen-idea</code>. Some Poly/ML editing support is available for <a href="https://github.com/akissinger/sublime-polyml">Sublime Text 2/3</a>, <a href="https://github.com/vim-scripts/sml_polyml.vim">vim</a>, and <a href="http://dream.inf.ed.ac.uk/projects/polyml/jedit-plugin/">JEdit</a>.</p>
 
 <h2>A sample project</h2>
 
