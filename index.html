@@ -38,18 +38,120 @@ sbt run
 
 <p>You will see a number of options once <code>sbt run</code> is complete. Choose QuantoDerive to get the main GUI. For scala development in <a href="http://www.jetbrains.com/idea/">Intellij IDEA</a>, create a project with <code>sbt gen-idea</code>. Some Poly/ML editing support is available for <a href="https://github.com/akissinger/sublime-polyml">Sublime Text 2/3</a>, <a href="https://github.com/vim-scripts/sml_polyml.vim">vim</a>, and <a href="http://dream.inf.ed.ac.uk/projects/polyml/jedit-plugin/">JEdit</a>.</p>
 
-<h2>A sample project</h2>
+<h2>A ten-minute tutorial...with pictures!</h2>
 
-<p>To start experimenting with QuantoDerive, you can clone the sample project from GitHub or download it as a zip file.</p>
+<p>To start experimenting with QuantoDerive, <em>download the sample project</em> and unzip it somewhere on your computer. Alternatively, if you are accustomed to working with <code>git</code>, you can clone it from GitHub.</p>
 
 <p>
   <a href="https://github.com/Quantomatic/qderive-sample/archive/master.zip" class="btn btn-default" role="button"><span class="glyphicon glyphicon-download-alt"></span> Download zip</a>
   <a href="https://github.com/Quantomatic/qderive-sample" class="btn btn-default" role="button">Clone from GitHub &raquo;</a>
 </p>
 
-<p>Once you clone (or download and unzip) the sample project, open it in QuantoDerive with <code>File > Open Project...</code> by selecting (or navigating to) the <i>directory</i> in the file browser and clicking <code>Open</code>.</p>
+<p>Once you clone (or download and unzip) the sample project, open it in QuantoDerive with <code>File > Open Project...</code> by selecting (or navigating to) the <i>directory</i> in the file browser and clicking <code>Open</code>. At this point, you should be seeing something like this:</p>
 
-<p>From there, try opening graphs, rules, and derivations, and...experiment! See what happens when you click on the white dots in a derivation (these are called &quot;proof heads&quot;) and add some rewrite rules with the Rewrite panel. Install simplification procedures (or &quot;simprocs&quot;) by opening them and clicking <img src="images/gui/start.png" />. These will then become available when you click <img src="images/gui/view-refresh.png" /> in the Simplify panel of the derivation editor.</p>
+<img class="img-thumbnail center-block" src="images/screens/start.jpg" style="width:457px; height:301px" /><br />
+
+<h3>Graph editing</h3>
+
+<p>Expand the graphs folder on the right and double-click <code>sample.qgraph</code>. This will open the graph editor:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/graph_open.jpg" style="width:457px; height:301px" /><br />
+
+<p>Pretty standard stuff here. Drag nodes around, copy and paste, etc. Use the <kbd>=</kbd> and <kbd>-</kbd> keys to zoom in and out. Double-click nodes (or edges) to edit data. One handy trick is to let QuantoDerive do some automatic layout for you. Notice how there are a bunch of nodes clustered up in a particularly unhelpful way in the above graph? Try selecting them and holding down the <kbd>R</kbd> key to <em>relax</em> the node positions:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/graph_relax.jpg" style="width:457px; height:301px" /><br />
+
+<p>That's better! Next, have a look at the tools we have available:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/tools.jpg" /><br />
+
+<p>From left-to-right, these are: <code>Select</code>, <code>Add Vertex</code>, <code>Add Boundary</code>, <code>Add Edge</code>, and <code>Edit !-Boxes</code>. We have already been using the <code>Select</code> tool, so click on the <code>Add Vertex</code> tool. Notice now the vertex types at the bottom of the screen is now enabled. Pick a vertex type:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/vertex_type.jpg" /><br />
+
+<p>Since the sample project is set up for the ZX-calculus, the available types are well...<code>Z</code> and <code>X</code>. We'll ignore the <code>&lt;wire&gt;</code> type for now. Once a type is selected, clicking on the screen will add vertices of that type.</p>
+
+<p>Similar to the vertex tool is the boundary tool. These create dummy vertices which serve as free edges, or boundaries to a graph. These are important for creating rules. Note that these don't become proper inputs/outputs until we connect some edges to them. To do that, try out the edge tool:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/edge.jpg" /><br />
+
+<p>Edges are created by clicking and dragging from one vertex to another. They can either be directed or undirected, which is set by the checkbox in the lower-right corner. Some theories can have multiple types of edges, which you can pick from the <code>Edge Type</code> drop-down, but the ZX-calculus only allows one edge type, so no need to mess with it.</p>
+
+<p>The tool that needs the most explanation is the <code>Edit !-Box</code> tool. !-boxes (or &quot;bang-boxes&quot;) allow you to mark sub-graphs that can be repeated any number of times. With the !-box tool selected, click and drag around some vertices to create a new !-box:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/bbox.jpg" /><br />
+
+<p>To add are remove nodes from a !-box, click and drag from upper-left corner of the !-box to the thing you want to add/remove. This also works for <em>other</em> !-boxes. To nest one !-box inside another, click and drag from the parent's corner to the child's:</p>
+
+<div class="center-block" style="width: 680px">
+  <img class="img-thumbnail" src="images/screens/nest1.jpg" style="height:275px; width:320px" />
+  <span class="glyphicon glyphicon-arrow-right"></span>
+  <img class="img-thumbnail" src="images/screens/nest2.jpg" style="height:275px; width:320px" />
+</div><br />
+
+<p>Just like with nodes, repeating the process will remove the child !-box from the parent. QuantoDerive tries its best to only draw !-boxes around nodes that are actually <em>inside</em> that !-box, but sometimes things can go wrong. For example, if a vertex ends up between two vertices that are both in a !-box <code>bx0</code>, it might appear to be in <code>bx0</code> as well. This can get confusing, so QuantoDerive tries to help you out:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/not_in_bbox.jpg" /><br />
+
+<p>The node <code>v3</code> above is not actually in <code>bx0</code>, so QuantoDerive is giving you a (not-so-subtle) hint to move it somewhere else.</p>
+
+<h3>Rule editing</h3>
+
+<p>Rule editing is similar, except now we work with two graphs side-by-side:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/rule.jpg" style="width:457px; height:301px" /><br />
+
+<p>Here, the blue outline is handy because it shows which graph has the keyboard focus, e.g. for copy-and-paste and <kbd>R</kbd>. To make a valid rule, the LHS and RHS should have identical boundaries and !-boxes. Not only should the numbers match, but also the labels. For example, in the rule above, both sides have two boundary vertices, labelled <code>b0</code> and <code>b1</code>.</p>
+
+<p>Rules are created by selecting <code>File > New Axiom</code>. Soon, you will also be able to create rules from derivations, i.e. theorems.</p>
+
+<h3>Starting a derivation</h3>
+
+<p>To start a new derivation, open a graph that will serve as a starting point, and select <code>Derive > Start derivation</code>.</p>
+
+<img class="img-thumbnail center-block" src="images/screens/start_derivation.jpg" /><br />
+
+<p>This opens up the derivation editor. Nothing is happening yet because no rules have been added. Click the <code>+</code> button in the <code>Rewrite</code> pane to add some rules.</p>
+
+<img class="img-thumbnail center-block" src="images/screens/add_rules.jpg" /><br />
+
+<p>I usually add all of them because...why not? As soon as you add some rules, QuantoDerive will start eagerly searching for matchings:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/rewrite_panel.jpg" /><br />
+
+<p>The more cores your computer has, the more fun this part is! Currently, QuantoDerive will find up to 50 matchings for each rule, which you can browse through using the left and right arrow buttons. Also note that selecting subgraphs on the left will refine the search. One you find the rewrite you want, click <code>Apply</code>. This will create a proof step, which you can view at any time by clicking on it in the history view:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/history.jpg" style="width:457px; height:301px" /><br />
+
+<p>The piece of graph that was removed is highlighted on the LHS, while the new piece of graph that was added is shown on the RHS. Rewriting always takes place at the end of a chain of rewrite steps, which is called a <em>proof head</em>. The derivation editor is designed so that you can try rules out, and if they don't work, you can back up and try other things without ever losing your work. This means that histories can branch and have multiple heads. To create a new head, click a rewrite step somewhere in the path, and click the <code>New Proof Head</code> button in the toolbar:</p>
+
+<div class="center-block" style="width: 540px">
+  <img class="img-thumbnail" src="images/screens/new_head_button.jpg" style="height:182px; width:263px" />
+  <span class="glyphicon glyphicon-arrow-right"></span>
+  <img class="img-thumbnail" src="images/screens/new_head.jpg" style="height:182px; width:249px" />
+</div><br />
+
+<h3>Using the simplifier</h3>
+
+<p>When you are tired of applying rewrites one at a time, click on a proof head, and switch over the the simplify panel. Notice there isn't a whole lot to see. That's because we haven't loaded any simplification procedures, aka <em>simprocs</em> yet. These are little pieces of code that define a simplification strategy. On the left, open the <code>simprocs</code> folder and double-click <code>basic_simp.ML</code>:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/simproc.jpg" style="width:457px; height:301px" /><br />
+
+<p>This one's as basic as they come. It loads a some rules from the project into a list called <code>simps</code>, then it will try to apply rules from <code>simps</code> until either it runs out of rules to apply, or you stop it. That's what <code>REDUCE_ALL simps</code> does. Click the <img src="images/gui/start.png" /> button in the toolbar to execute this code, which will <em>register</em> the procedure <code>basic_simproc</code> with QuantoDerive. Now, go back to your derivation and click the refresh button:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/refresh.jpg" /><br />
+
+<p>There it is, ready to go. Select <code>basic_simp</code> and click play:</p>
+
+<img class="img-thumbnail center-block" src="images/screens/basic_simp.jpg" style="width:457px; height:301px" /><br />
+
+<p>Well, that didn't get us very far. It is basic, after all. Go back to <code>simprocs</code> and open <code>rotate_simp.ML</code> and execute it. Now, back in our derivation, click the refresh button again and run <code>rotate_simp</code>.</p>
+
+<img class="img-thumbnail center-block" src="images/screens/rotate_simp.jpg" style="width:457px; height:301px" /><br />
+
+<p>That's better! Of course, your results may vary depending on what nodes you added earlier.</p>
+
+<p>So, that's pretty much all there is to it. Play around with creating some new rules or even a new project. We'll be rolling out support for more theories if and when there's a demand. Currently, we support ZX projects and GHZ/W projects, though this really only defines what the nodes look like.</p>
 
 
 <!-- <h1>News</h1>
