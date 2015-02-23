@@ -1,0 +1,444 @@
+{
+  "root": {
+    "bang_boxes": {
+      "bx1": {
+        "contents": [
+          "b0",
+          "v2"
+        ]
+      },
+      "bx2": {
+        "contents": [
+          "b1",
+          "v3"
+        ]
+      },
+      "bx4": {
+        "contents": [
+          "b2",
+          "v4"
+        ]
+      }
+    },
+    "wire_vertices": {
+      "b1": {
+        "annotation": {
+          "boundary": true,
+          "coord": [
+            -2.4599999999999995,
+            -2.3200000000000003
+          ]
+        }
+      },
+      "b0": {
+        "annotation": {
+          "boundary": true,
+          "coord": [
+            0.12000000000000043,
+            3.7400000000000007
+          ]
+        }
+      },
+      "b2": {
+        "annotation": {
+          "boundary": true,
+          "coord": [
+            2.1,
+            -2.24
+          ]
+        }
+      }
+    },
+    "node_vertices": {
+      "v2": {
+        "annotation": {
+          "coord": [
+            0.04,
+            2.44
+          ]
+        }
+      },
+      "v5": {
+        "data": {
+          "type": "X",
+          "value": ""
+        },
+        "annotation": {
+          "coord": [
+            -0.28,
+            -0.8
+          ]
+        }
+      },
+      "v1": {
+        "data": {
+          "type": "X",
+          "value": ""
+        },
+        "annotation": {
+          "coord": [
+            1.14,
+            0.68
+          ]
+        }
+      },
+      "v4": {
+        "annotation": {
+          "coord": [
+            1.68,
+            -1.04
+          ]
+        }
+      },
+      "v0": {
+        "data": {
+          "type": "X",
+          "value": ""
+        },
+        "annotation": {
+          "coord": [
+            -1.08,
+            0.74
+          ]
+        }
+      },
+      "v3": {
+        "annotation": {
+          "coord": [
+            -1.94,
+            -0.92
+          ]
+        }
+      }
+    },
+    "undir_edges": {
+      "e6": {
+        "src": "v3",
+        "tgt": "b1"
+      },
+      "e1": {
+        "src": "v2",
+        "tgt": "v1"
+      },
+      "e5": {
+        "src": "v0",
+        "tgt": "v3"
+      },
+      "e7": {
+        "src": "v3",
+        "tgt": "v5"
+      },
+      "e0": {
+        "src": "b0",
+        "tgt": "v2"
+      },
+      "e4": {
+        "src": "v2",
+        "tgt": "v0"
+      },
+      "e8": {
+        "src": "v5",
+        "tgt": "v4"
+      },
+      "e3": {
+        "src": "v4",
+        "tgt": "b2"
+      },
+      "e2": {
+        "src": "v1",
+        "tgt": "v4"
+      }
+    }
+  },
+  "steps": {
+    "red_sp-0": {
+      "name": "red_sp-0",
+      "rule": {
+        "lhs": {
+          "bang_boxes": {
+            "bx2": {
+              "contents": [
+                "Vj"
+              ]
+            },
+            "bx4": {
+              "contents": [
+                "Vk"
+              ]
+            }
+          },
+          "wire_vertices": [
+            "Vj",
+            "Vk"
+          ],
+          "node_vertices": {
+            "v6": {
+              "data": {
+                "type": "X",
+                "value": "0"
+              },
+              "annotation": {
+                "coord": [
+                  0.14,
+                  0.01
+                ]
+              }
+            }
+          },
+          "undir_edges": {
+            "e2": {
+              "src": "Vk",
+              "tgt": "v6"
+            },
+            "e4": {
+              "src": "v6",
+              "tgt": "Vj"
+            }
+          }
+        },
+        "rhs": {
+          "bang_boxes": {
+            "bx2": {
+              "contents": [
+                "Vj"
+              ]
+            },
+            "bx4": {
+              "contents": [
+                "Vk"
+              ]
+            }
+          },
+          "wire_vertices": [
+            "Vj",
+            "Vk"
+          ],
+          "node_vertices": {
+            "v6": {
+              "data": {
+                "type": "X",
+                "value": "0"
+              },
+              "annotation": {
+                "coord": [
+                  0.62,
+                  -0.57
+                ]
+              }
+            },
+            "v7": {
+              "data": {
+                "type": "X",
+                "value": "0"
+              },
+              "annotation": {
+                "coord": [
+                  0.58,
+                  1.29
+                ]
+              }
+            }
+          },
+          "undir_edges": {
+            "e1": {
+              "src": "v6",
+              "tgt": "v7"
+            },
+            "e4": {
+              "src": "Vk",
+              "tgt": "v6"
+            },
+            "e5": {
+              "src": "v7",
+              "tgt": "Vj"
+            }
+          }
+        }
+      },
+      "graph": {
+        "bang_boxes": {
+          "bx1": {
+            "contents": [
+              "b0",
+              "v2"
+            ]
+          },
+          "bx2": {
+            "contents": [
+              "b1",
+              "v3"
+            ]
+          },
+          "bx4": {
+            "contents": [
+              "b2",
+              "v4"
+            ]
+          }
+        },
+        "wire_vertices": {
+          "b1": {
+            "annotation": {
+              "boundary": true,
+              "coord": [
+                -3.718805799115896,
+                -2.5782985005665338
+              ]
+            }
+          },
+          "b0": {
+            "annotation": {
+              "boundary": true,
+              "coord": [
+                0.17197791395228657,
+                4.58916615914311
+              ]
+            }
+          },
+          "b2": {
+            "annotation": {
+              "boundary": true,
+              "coord": [
+                3.4609427282574616,
+                -2.7587370307859467
+              ]
+            }
+          }
+        },
+        "node_vertices": {
+          "v7": {
+            "data": {
+              "type": "X",
+              "value": "0"
+            },
+            "annotation": {
+              "coord": [
+                -1.2145732848344366,
+                -2.399274249038717
+              ]
+            }
+          },
+          "v2": {
+            "data": {
+              "type": "Z",
+              "value": "0"
+            },
+            "annotation": {
+              "coord": [
+                0.09606696905928894,
+                2.8244375644101765
+              ]
+            }
+          },
+          "v6": {
+            "data": {
+              "type": "X",
+              "value": "0"
+            },
+            "annotation": {
+              "coord": [
+                0.8871631834813714,
+                -2.3963597528668865
+              ]
+            }
+          },
+          "v1": {
+            "data": {
+              "type": "X",
+              "value": "0"
+            },
+            "annotation": {
+              "coord": [
+                1.8758035989842046,
+                1.1944521906512577
+              ]
+            }
+          },
+          "v4": {
+            "data": {
+              "type": "Z",
+              "value": "0"
+            },
+            "annotation": {
+              "coord": [
+                2.5489080882969937,
+                -1.2363016335234538
+              ]
+            }
+          },
+          "v0": {
+            "data": {
+              "type": "X",
+              "value": "0"
+            },
+            "annotation": {
+              "coord": [
+                -1.7872283569945782,
+                1.3218483229730709
+              ]
+            }
+          },
+          "v3": {
+            "data": {
+              "type": "Z",
+              "value": "0"
+            },
+            "annotation": {
+              "coord": [
+                -2.732363591609128,
+                -1.0599883619876065
+              ]
+            }
+          }
+        },
+        "undir_edges": {
+          "e6": {
+            "src": "v3",
+            "tgt": "b1"
+          },
+          "e1": {
+            "src": "v6",
+            "tgt": "v7"
+          },
+          "Eb": {
+            "src": "v1",
+            "tgt": "v4"
+          },
+          "Ea": {
+            "src": "v2",
+            "tgt": "v1"
+          },
+          "e0": {
+            "src": "b0",
+            "tgt": "v2"
+          },
+          "Ee": {
+            "src": "v3",
+            "tgt": "v7"
+          },
+          "e3": {
+            "src": "v4",
+            "tgt": "b2"
+          },
+          "Ed": {
+            "src": "v0",
+            "tgt": "v3"
+          },
+          "Ef": {
+            "src": "v6",
+            "tgt": "v4"
+          },
+          "Ec": {
+            "src": "v2",
+            "tgt": "v0"
+          }
+        }
+      },
+      "rule_name": "axioms/red_sp",
+      "rule_variant": "inverse"
+    }
+  },
+  "heads": [
+    "red_sp-0"
+  ]
+}

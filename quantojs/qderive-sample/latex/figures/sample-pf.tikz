@@ -1,0 +1,307 @@
+\begin{quote}\raggedright
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wire] (b5) at (4.35, -2.9) {};
+		\node [style=Z] (v4) at (-2.3666666666666667, -2.716666666666667) {};
+		\node [style=wire] (b1) at (-4.4, -0.9833333333333333) {};
+		\node [style=wire] (b0) at (-4.483333333333333, 0.7666666666666667) {};
+		\node [style=Z] (v3) at (1.9, 0.75) {};
+		\node [style=wire] (b2) at (-4.4, -2.8) {};
+		\node [style=Z] (v1) at (-2.3, 0.65) {};
+		\node [style=X] (v0) at (-2.3666666666666667, -0.95) {};
+		\node [style=X] (v7) at (-0.1, -1.05) {};
+		\node [style=Z] (v2) at (-0.23333333333333334, 0.75) {};
+		\node [style=Z] (v5) at (-0.06666666666666667, -2.75) {};
+		\node [style=wire] (b4) at (4.3, 0.8833333333333333) {};
+		\node [style=wire] (b3) at (4.316666666666666, -1.0666666666666667) {};
+		\node [style=X] (v8) at (1.9666666666666666, -1.05) {};
+		\node [style=Z] (v6) at (1.9666666666666666, -2.9) {};
+		\node [style=none] (padl) at (-5.483333333333333, -3.9) {};
+		\node [style=none] (padr) at (5.35, 1.8833333333333333) {};
+		\node [style=none] (padu) at (-5.483333333333333, 1.8833333333333333) {};
+		\node [style=none] (padd) at (5.35, -3.9) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=simple] (v8) to (v6);
+		\draw [style=simple] (v3) to (b3);
+		\draw [style=simple] (v8) to (b4);
+		\draw [style=simple] (v5) to (v6);
+		\draw [style=simple] (v7) to (v5);
+		\draw [style=simple] (v2) to (v8);
+		\draw [style=simple] (v2) to (v7);
+		\draw [style=simple] (v2) to (v0);
+		\draw [style=simple] (v1) to (v0);
+		\draw [style=simple] (v0) to (v4);
+		\draw [style=simple] (v1) to (v7);
+		\draw [style=simple] (b2) to (v4);
+		\draw [style=simple] (v3) to (v8);
+		\draw [style=simple] (v3) to (v7);
+		\draw [style=simple] (b0) to (v1);
+		\draw [style=simple] (b1) to (v0);
+		\draw [style=simple] (v4) to (v5);
+		\draw [style=simple] (v6) to (b5);
+	\end{pgfonlayer}
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+=
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=Z] (v9) at (1.5333333333333334, -2.85) {};
+		\node [style=wire] (b5) at (4.35, -2.9) {};
+		\node [style=Z] (v4) at (-2.3666666666666667, -2.716666666666667) {};
+		\node [style=wire] (b1) at (-4.4, -0.9833333333333333) {};
+		\node [style=wire] (b0) at (-4.483333333333333, 0.7666666666666667) {};
+		\node [style=Z] (v3) at (1.9, 0.75) {};
+		\node [style=wire] (b2) at (-4.4, -2.8) {};
+		\node [style=Z] (v1) at (-2.3, 0.65) {};
+		\node [style=X] (v0) at (-2.3666666666666667, -0.95) {};
+		\node [style=X] (v7) at (-0.1, -1.05) {};
+		\node [style=Z] (v2) at (-0.23333333333333334, 0.75) {};
+		\node [style=wire] (b4) at (4.3, 0.8833333333333333) {};
+		\node [style=wire] (b3) at (4.316666666666666, -1.0666666666666667) {};
+		\node [style=X] (v8) at (1.9666666666666666, -1.05) {};
+		\node [style=none] (padl) at (-5.483333333333333, -3.9) {};
+		\node [style=none] (padr) at (5.35, 1.8833333333333333) {};
+		\node [style=none] (padu) at (-5.483333333333333, 1.8833333333333333) {};
+		\node [style=none] (padd) at (5.35, -3.9) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=simple] (v8) to (v9);
+		\draw [style=simple] (v3) to (b3);
+		\draw [style=simple] (v8) to (b4);
+		\draw [style=simple] (v2) to (v8);
+		\draw [style=simple] (v2) to (v7);
+		\draw [style=simple] (v7) to (v9);
+		\draw [style=simple] (v2) to (v0);
+		\draw [style=simple] (v1) to (v0);
+		\draw [style=simple] (v0) to (v4);
+		\draw [style=simple] (v1) to (v7);
+		\draw [style=simple] (b2) to (v4);
+		\draw [style=simple] (v3) to (v8);
+		\draw [style=simple] (v3) to (v7);
+		\draw [style=simple] (b0) to (v1);
+		\draw [style=simple] (b1) to (v0);
+		\draw [style=simple] (v4) to (v9);
+		\draw [style=simple] (b5) to (v9);
+	\end{pgfonlayer}
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+=
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wire] (b5) at (4.35, -2.9) {};
+		\node [style=wire] (b1) at (-4.4, -0.9833333333333333) {};
+		\node [style=wire] (b0) at (-4.483333333333333, 0.7666666666666667) {};
+		\node [style=Z] (v3) at (1.9, 0.75) {};
+		\node [style=wire] (b2) at (-4.4, -2.8) {};
+		\node [style=Z] (v1) at (-2.3, 0.65) {};
+		\node [style=X] (v0) at (-2.3666666666666667, -0.95) {};
+		\node [style=X] (v7) at (-0.1, -1.05) {};
+		\node [style=Z] (v2) at (-0.23333333333333334, 0.75) {};
+		\node [style=Z] (v5) at (0.1, -2.75) {};
+		\node [style=wire] (b4) at (4.3, 0.8833333333333333) {};
+		\node [style=wire] (b3) at (4.316666666666666, -1.0666666666666667) {};
+		\node [style=X] (v8) at (1.9666666666666666, -1.05) {};
+		\node [style=none] (padl) at (-5.483333333333333, -3.9) {};
+		\node [style=none] (padr) at (5.35, 1.8833333333333333) {};
+		\node [style=none] (padu) at (-5.483333333333333, 1.8833333333333333) {};
+		\node [style=none] (padd) at (5.35, -3.9) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=simple] (v3) to (b3);
+		\draw [style=simple] (v8) to (b4);
+		\draw [style=simple] (v8) to (v5);
+		\draw [style=simple] (v7) to (v5);
+		\draw [style=simple] (v2) to (v8);
+		\draw [style=simple] (v2) to (v7);
+		\draw [style=simple] (v0) to (v5);
+		\draw [style=simple] (v2) to (v0);
+		\draw [style=simple] (v1) to (v0);
+		\draw [style=simple] (v1) to (v7);
+		\draw [style=simple] (v5) to (b2);
+		\draw [style=simple] (v3) to (v8);
+		\draw [style=simple] (v3) to (v7);
+		\draw [style=simple] (b0) to (v1);
+		\draw [style=simple] (b1) to (v0);
+		\draw [style=simple] (b5) to (v5);
+	\end{pgfonlayer}
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+=
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wire] (b5) at (4.35, -2.9) {};
+		\node [style=X] (v4) at (1.6333333333333333, 2.05) {};
+		\node [style=wire] (b1) at (-4.4, -0.9833333333333333) {};
+		\node [style=wire] (b0) at (-4.483333333333333, 0.7666666666666667) {};
+		\node [style=Z] (v3) at (1.9, 0.75) {};
+		\node [style=wire] (b2) at (-4.4, -2.8) {};
+		\node [style=Z] (v1) at (-2.3, 0.65) {};
+		\node [style=X] (v0) at (-2.3666666666666667, -0.95) {};
+		\node [style=X] (v7) at (-0.1, -1.05) {};
+		\node [style=Z] (v2) at (-0.23333333333333334, 0.75) {};
+		\node [style=Z] (v5) at (0.16666666666666666, 0.21666666666666667) {};
+		\node [style=wire] (b4) at (4.3, 0.8833333333333333) {};
+		\node [style=wire] (b3) at (4.316666666666666, -1.0666666666666667) {};
+		\node [style=Z] (v6) at (3.933333333333333, 2.183333333333333) {};
+		\node [style=none] (padl) at (-5.483333333333333, -3.9) {};
+		\node [style=none] (padr) at (5.35, 3.183333333333333) {};
+		\node [style=none] (padu) at (-5.483333333333333, 3.183333333333333) {};
+		\node [style=none] (padd) at (5.35, -3.9) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=simple] (v3) to (b3);
+		\draw [style=simple] (b4) to (v6);
+		\draw [style=simple] (v7) to (v5);
+		\draw [style=simple] (v2) to (v7);
+		\draw [style=simple] (v2) to (v4);
+		\draw [style=simple] (v0) to (v5);
+		\draw [style=simple] (v2) to (v0);
+		\draw [style=simple] (v1) to (v0);
+		\draw [style=simple] (v1) to (v7);
+		\draw [style=simple] (v5) to (b2);
+		\draw [style=simple] (v3) to (v7);
+		\draw [style=simple] (v3) to (v4);
+		\draw [style=simple] (b0) to (v1);
+		\draw [style=simple] (b1) to (v0);
+		\draw [style=simple] (v6) to (v4);
+		\draw [style=simple] (v4) to (v5);
+		\draw [style=simple] (b5) to (v5);
+	\end{pgfonlayer}
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+=
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=Z] (v9) at (-4.5, 0.05) {};
+		\node [style=wire] (b5) at (4.35, -2.9) {};
+		\node [style=X] (v4) at (0.03333333333333333, -0.016666666666666666) {};
+		\node [style=wire] (b1) at (-4.4, -0.9833333333333333) {};
+		\node [style=wire] (b0) at (-4.483333333333333, 0.7666666666666667) {};
+		\node [style=Z] (v3) at (1.9, 0.75) {};
+		\node [style=wire] (b2) at (-4.4, -2.8) {};
+		\node [style=Z] (v1) at (-2.3, 0.65) {};
+		\node [style=X] (v7) at (-0.1, -1.05) {};
+		\node [style=Z] (v2) at (-0.23333333333333334, 0.75) {};
+		\node [style=Z] (v5) at (0.16666666666666666, 0.21666666666666667) {};
+		\node [style=wire] (b4) at (4.3, 0.8833333333333333) {};
+		\node [style=wire] (b3) at (4.316666666666666, -1.0666666666666667) {};
+		\node [style=X] (v8) at (-2.2, 1.8166666666666667) {};
+		\node [style=Z] (v6) at (0.8666666666666667, -0.48333333333333334) {};
+		\node [style=none] (padl) at (-5.5, -3.9) {};
+		\node [style=none] (padr) at (5.35, 2.8166666666666664) {};
+		\node [style=none] (padu) at (-5.5, 2.8166666666666664) {};
+		\node [style=none] (padd) at (5.35, -3.9) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=simple] (v9) to (v8);
+		\draw [style=simple] (v3) to (b3);
+		\draw [style=simple] (b4) to (v6);
+		\draw [style=simple] (v8) to (v5);
+		\draw [style=simple] (v7) to (v5);
+		\draw [style=simple] (v2) to (v8);
+		\draw [style=simple] (v2) to (v7);
+		\draw [style=simple] (v2) to (v4);
+		\draw [style=simple] (v1) to (v8);
+		\draw [style=simple] (v1) to (v7);
+		\draw [style=simple] (v5) to (b2);
+		\draw [style=simple] (v3) to (v7);
+		\draw [style=simple] (v3) to (v4);
+		\draw [style=simple] (b0) to (v1);
+		\draw [style=simple] (b1) to (v9);
+		\draw [style=simple] (v6) to (v4);
+		\draw [style=simple] (v4) to (v5);
+		\draw [style=simple] (b5) to (v5);
+	\end{pgfonlayer}
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+=
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wire] (b5) at (4.35, -2.9) {};
+		\node [style=Z] (v14) at (-3.966666666666667, -0.6833333333333333) {};
+		\node [style=Z] (v17) at (2.033333333333333, 0.55) {};
+		\node [style=X] (v4) at (0.03333333333333333, -0.016666666666666666) {};
+		\node [style=wire] (b1) at (-4.4, -0.9833333333333333) {};
+		\node [style=wire] (b0) at (-4.483333333333333, 0.7666666666666667) {};
+		\node [style=X] (v12) at (0.23333333333333334, 3.1166666666666667) {};
+		\node [style=Z] (v11) at (0.23333333333333334, -2.8833333333333333) {};
+		\node [style=wire] (b2) at (-4.4, -2.8) {};
+		\node [style=Z] (v10) at (-2.6333333333333333, 2.4833333333333334) {};
+		\node [style=Z] (v18) at (-1.8333333333333333, 0.18333333333333332) {};
+		\node [style=X] (v13) at (-1.2333333333333334, -1.45) {};
+		\node [style=wire] (b4) at (4.3, 0.8833333333333333) {};
+		\node [style=wire] (b3) at (4.316666666666666, -1.0666666666666667) {};
+		\node [style=Z] (v6) at (0.8666666666666667, -0.48333333333333334) {};
+		\node [style=none] (padl) at (-5.483333333333333, -3.9) {};
+		\node [style=none] (padr) at (5.35, 4.116666666666667) {};
+		\node [style=none] (padu) at (-5.483333333333333, 4.116666666666667) {};
+		\node [style=none] (padd) at (5.35, -3.9) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=simple] (v17) to (b3);
+		\draw [style=simple] (b4) to (v6);
+		\draw [style=simple] (v18) to (v13);
+		\draw [style=simple] (v13) to (v17);
+		\draw [style=simple] (v14) to (v13);
+		\draw [style=simple] (v10) to (v12);
+		\draw [style=simple] (b2) to (v11);
+		\draw [style=simple] (v11) to (v13);
+		\draw [style=simple] (v12) to (v17);
+		\draw [style=simple] (b0) to (v14);
+		\draw [style=simple] (v10) to (b1);
+		\draw [style=simple] (v6) to (v4);
+		\draw [style=simple] (v18) to (v4);
+		\draw [style=simple] (v4) to (v11);
+		\draw [style=simple] (v17) to (v4);
+		\draw [style=simple] (b5) to (v11);
+	\end{pgfonlayer}
+\end{tikzpicture}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+=
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[baseline={([yshift=-.5ex]current bounding box.center)}]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wire] (b5) at (4.35, -2.9) {};
+		\node [style=Z] (v16) at (1.6666666666666667, 2.283333333333333) {};
+		\node [style=wire] (b1) at (-4.4, -0.9833333333333333) {};
+		\node [style=Z] (v19) at (0.43333333333333335, -2.95) {};
+		\node [style=wire] (b0) at (-4.483333333333333, 0.7666666666666667) {};
+		\node [style=X] (v12) at (-0.13333333333333333, -1.05) {};
+		\node [style=Z] (v3) at (4.2, 2.8833333333333333) {};
+		\node [style=wire] (b2) at (-4.4, -2.8) {};
+		\node [style=Z] (v1) at (-3.6333333333333333, 2.316666666666667) {};
+		\node [style=Z] (v10) at (0.0, 0.0) {};
+		\node [style=X] (v7) at (2.466666666666667, 0.05) {};
+		\node [style=X] (v5) at (-1.2333333333333334, 3.183333333333333) {};
+		\node [style=wire] (b4) at (4.3, 0.8833333333333333) {};
+		\node [style=wire] (b3) at (4.316666666666666, -1.0666666666666667) {};
+		\node [style=Z] (v8) at (2.7, -1.6166666666666667) {};
+		\node [style=none] (padl) at (-5.483333333333333, -3.95) {};
+		\node [style=none] (padr) at (5.35, 4.183333333333334) {};
+		\node [style=none] (padu) at (-5.483333333333333, 4.183333333333334) {};
+		\node [style=none] (padd) at (5.35, -3.95) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=simple] (v12) to (v8);
+		\draw [style=simple] (b3) to (v8);
+		\draw [style=simple] (v16) to (b4);
+		\draw [style=simple] (v5) to (v16);
+		\draw [style=simple] (v8) to (v7);
+		\draw [style=simple] (v19) to (v7);
+		\draw [style=simple] (v7) to (v16);
+		\draw [style=simple] (v10) to (v12);
+		\draw [style=simple] (v1) to (v5);
+		\draw [style=simple] (b2) to (v19);
+		\draw [style=simple] (v3) to (v7);
+		\draw [style=simple] (v1) to (b0);
+		\draw [style=simple] (v10) to (b1);
+		\draw [style=simple] (b5) to (v19);
+	\end{pgfonlayer}
+\end{tikzpicture}
+\end{quote}

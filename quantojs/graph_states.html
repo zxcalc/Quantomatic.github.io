@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Quanto.js</title>
+  <meta name="quanto-project" content="qderive-sample" />
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/quantojs.css" />
+
+  <!-- required for quanto.js -->
+  <script src="js/d3.min.js"></script>
+  <script src="js/texconstants.js"></script>
+
+  <!-- optionally include MathJax for tex math support -->
+  <!-- <script src="/MathJax/MathJax.js?config=default"></script> -->
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Note on: <i>Graph states and the necessity of Euler Decomposition</i></h1>
+
+  <p class="definition">
+    A complete graph (up to spider-fusion) k1 is defined recursively as:
+    <div class="qrule" data-src="local_comp/k1_base"></div>
+    <div class="qrule" data-src="local_comp/k1_step"></div>
+  </p>
+
+  <p>We will show the difficult part of local complementation, namely that a connected graph can be added at will to the adjacent edges of a spider. First, we prove the two-edge case as a lemma:</p>
+
+  <p class="lemma">
+    <div class="qrule" data-src="local_comp/local-comp-lem"></div>
+  </p>
+
+  <p class="proof">
+    <div class="qderive" data-src="local_comp/local-comp-lem"></div>
+  </p>
+
+  <p>Then the general case, using induction:</p>
+
+  <p class="theorem">
+    <div class="qrule" data-src="local_comp/local-comp"></div>
+  </p>
+
+  <p class="proof">
+    By !-box induction. The base case is trivial. The step case is:
+    <div class="qderive" data-src="local_comp/local-comp-step"></div>
+  </p>
+
+</div>
+
+<script src="js/quanto.js"></script>
+
+</body>
+</html>
