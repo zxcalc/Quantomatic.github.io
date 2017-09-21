@@ -13,19 +13,47 @@ title: Home
   <a href="https://github.com/Quantomatic/quantomatic" class="btn btn-lg btn-success" role="button">GitHub Project &raquo;</a></p>
 </div>
 
-<h1>Quick Start</h1>
+<h1>Setup</h1>
 
-<h2>Setup</h2>
+<p>
+  <b>Prerequisites:</b>
+  The only thing you will need to have installed is the Java Runtime Environment (version 6 or later, sometimes referred to as 1.6).
+  The java download page is <a href="https://java.com/en/download/">here</a>, or use your package manager if you have one.
+  To confirm it is set up correctly, check the output of <code>java -version</code> from the terminal.
+</p>
 
-<p>The only thing you will need to have installed is the Java Runtime version 6 or later (which is also sometimes called version 1.6). Older versions of OS X come with Java pre-loaded, but for Lion or later, you will need to <a href="http://support.apple.com/kb/DL1572?viewlocale=en_US">install it yourself</a>. On Linux, you should be able to install Java using your package manager. To confirm it is set up correctly, check the output of <code>java -version</code> from the terminal.</p>
+<p>
+  <b>For OS X:</b>
+  Download the OS X bundle above and extract it.
+  The first time you run the Mac app on OS X Lion or later you may need to run it by right-clicking, and clicking on <code>Open</code>.
+  You may also need to dismiss a warning about the app being from an unkown developer.
+</p>
 
-<p><b>For OS X:</b> download the OS X bundle above and extract it. The first time you run the Mac app on OS X Lion or later, you may need to run it by right-clicking, and clicking on <code>Open</code>, at which point it will complain about coming from an unknown developer. Allow it to open, and you should be able to run it as usual from then on.</p>
+<p>
+  <b>For Linux:</b>
+  Download the Linux bundle above, extract anywhere, and run <code>quanto-derive.sh</code>, either from the terminal or by double-clicking it in your file browser.
+</p>
 
-<p><b>For Linux:</b> download the Linux bundle above, extract anywhere, and run <code>quanto-derive.sh</code>, either from the terminal or by double-clicking it in your file browser.</p>
+<p>
+  <b>For Windows:</b>
+  Download the Windows zip file above, extract it, and run "QuantoDerive.exe".
+  You may need to dismiss a warning from Windows SmartScreen to allow the program to run.
+  In order to perform rewrites QuantoDerive connects to a poly-ml Core:
+  You can see the status of the Core by looking in the bottom left corner of the QuantoDerive window.
+  If the Core Status is anything other than "OK" you may need to allow "poly.exe" (found in the "bin" folder) permission to access the internet through your firewall settings.
+</p>
 
-<p><b>For Windows:</b> download the Windows installer and double-click it to install. On Windows 8, SmartScreen will complain if it's enabled. Just click <code>More Info > Run anyway</code>. For rewriting, QuantoDerive connects to <code>poly.exe</code> via a local port, so you may have to allow poly to access the internet in your firewall settings.</p>
-
-<p><b>From source:</b> To build QuantoDerive from source, you will need: a recent JDK (&gt;= 6), standard GNU developer tools (make, gcc, etc.), <a href="http://git-scm.com/">git</a>, <a href="http://www.scala-sbt.org/">sbt</a>, and <a href="http://www.polyml.org/">Poly/ML</a>. You will then need to clone Quantomatic, build the Quantomatic core using the <code>Makefile</code>, and build/run the frontend using sbt.</p>
+<p>
+  <b>From source:</b>
+  To instead build QuantoDerive from source, you will need:
+  <ul>
+  <li>a recent JDK (at least version 6)</li>
+  <li>standard GNU developer tools (make, gcc, etc.),</li>
+  <li><a href="http://git-scm.com/">git</a></li>
+  <li><a href="http://www.scala-sbt.org/">sbt</a></li>
+  <li><a href="http://www.polyml.org/">Poly/ML</a></li>
+</ul>
+  You will then need to clone Quantomatic, build the Quantomatic core using the <code>Makefile</code>, and build/run the frontend using sbt:</p>
 
 <pre>
 git clone git://github.com/Quantomatic/quantomatic.git -b integration
@@ -35,12 +63,23 @@ cd ../scala
 sbt run
 </pre>
 
-<p>You will see a number of options once <code>sbt run</code> is complete. Choose QuantoDerive to get the main GUI. For scala development in <a href="http://www.jetbrains.com/idea/">Intellij IDEA</a>, create a project with <code>sbt gen-idea</code>. Some Poly/ML editing support is available for <a href="https://github.com/akissinger/sublime-polyml">Sublime Text 2/3</a>, <a href="https://github.com/vim-scripts/sml_polyml.vim">vim</a>, and <a href="http://dream.inf.ed.ac.uk/projects/polyml/jedit-plugin/">JEdit</a>.</p>
+<p>You will see a number of options once <code>sbt run</code> is complete.
+  Choose QuantoDerive to get the main GUI.
+</p>
+
+<p>
+  For scala development in <a href="http://www.jetbrains.com/idea/">Intellij IDEA</a>, create a project with <code>sbt gen-idea</code>.
+  Some Poly/ML editing support is available for
+  <a href="https://github.com/akissinger/sublime-polyml">Sublime Text 2/3</a>,
+  <a href="https://github.com/vim-scripts/sml_polyml.vim">vim</a>,
+  and
+  <a href="http://dream.inf.ed.ac.uk/projects/polyml/jedit-plugin/">JEdit</a>.
+</p>
 
 
 <h1>Sample projects</h1>
 
-<p>The Quick Start below gives instructions for installing Quantomatic and getting up and running with a sample project. This section provides two additional projects to get you started.</p>
+<p>The Using QuantoDerive section below gives instructions getting it up and running with a sample project. This section provides two additional projects to get you started.</p>
 
 <h3>Bialgebra project</h3>
 
@@ -61,7 +100,7 @@ sbt run
 </p>
 
 
-<h1>Using Quantomatic</h1>
+<h1>Using QuantoDerive</h1>
 
 <p>To start experimenting with QuantoDerive, <em>download the sample project</em> and unzip it somewhere on your computer. Alternatively, if you are accustomed to working with <code>git</code>, you can clone it from GitHub.</p>
 
