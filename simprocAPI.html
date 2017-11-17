@@ -1,0 +1,45 @@
+---
+layout: default
+title: Simproc API
+---
+
+<h1>Writing Simprocs in Quantomatic</h1>
+
+<p>
+    How to use simprocs is covered in
+    <a href="./index.html">the main page</a>, but writing them takes only a little more know-how. You can create a new simproc file using
+    <code>File > New Python Script</code>.
+</p>
+
+<p>
+    Here is a sample file that covers the basics:
+</p>
+
+<pre>
+    <code>
+        # First expose the built-in features of Quantomatic
+        from quanto.util.Scripting import *
+        
+        # Now loads the listed rules and store them in the variable "simps"
+        rules = load_rules([
+          "axioms/red_copy", "axioms/red_sp", "axioms/green_sp", "axioms/hopf",
+          "axioms/red_scalar", "axioms/green_scalar", "axioms/green_id",
+          "axioms/red_id", "axioms/red_loop", "axioms/green_loop"])
+        
+        # Create a simproc by using the built-in method REDUCE
+        basic_reduce = REDUCE(rules)
+        
+        # REDUCE accepts a list of rules and returns a simproc
+        #   it will work through the listed rules and attempt to apply them,
+        #   until it has run out of ways to do so
+        
+        # Now give the simproc a name for the front-end to use
+        register_simproc("basic-simp", basic_reduce)
+        
+        # register_simproc provides a name so the front-end can refer to the simproc,
+        #   this is the name that appears in the "simplify" tab
+        #   you can register multiple simprocs from a single script
+    </code>
+</pre>
+
+<h1>Full Simproc API</h1>
