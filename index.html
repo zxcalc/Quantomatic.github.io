@@ -11,8 +11,8 @@ title: Home
     <a href="papers.html">papers</a>). It allows users to draw diagrams and build up proofs using diagrammatic rewrite
     rules. It's easier to show you what that means than to tell you, so download it and try it out!</p>
   <p style="line-height: 2.5em">
-    <a href="https://bintray.com/quantomatic/quantomatic/quantomatic/stable" class="btn btn-primary btn-lg" role="button">
-      <span class="glyphicon glyphicon-download-alt"></span>Download stable release</a>
+    <a href="https://bintray.com/quantomatic/quantomatic/download_file?file_path=release-0.6.1%2FQuantomatic.jar" class="btn btn-primary btn-lg" role="button">
+      <span class="glyphicon glyphicon-download-alt"></span>Download JAR (all platforms)</a>
     <a href="https://github.com/Quantomatic/quantomatic" class="btn btn-lg btn-success" role="button">GitHub Project &raquo;</a>
   </p>
 </div>
@@ -20,11 +20,14 @@ title: Home
 <h1>Download</h1>
 
 <p>
-  You can choose between
-  <a href="https://bintray.com/quantomatic/quantomatic/quantomatic/stable">the latest stable release</a> (recommended,)
-  <a href="https://bintray.com/quantomatic/quantomatic/quantomatic/bleeding-edge">the latest development release</a> (status: 
-  <img src="https://api.travis-ci.org/Quantomatic/quantomatic.svg?branch=integration" /> ), or you can
-  <a href="https://github.com/Quantomatic/quantomatic">access the source code directly</a>.
+  You can choose between:
+  <ul>
+    <li>the latest stable release (recommended): <a href="https://bintray.com/quantomatic/quantomatic/quantomatic/_latestVersion"><img src='https://api.bintray.com/packages/quantomatic/quantomatic/quantomatic/images/download.svg'></a></li>
+    <li>the latest development release: <a href='https://bintray.com/quantomatic/quantomatic/quantomatic/bleeding-edge/link'><img src='https://api.bintray.com/packages/quantomatic/quantomatic/quantomatic/images/download.svg?version=bleeding-edge'></a> (status: 
+  <a href="https://travis-ci.org/Quantomatic/quantomatic"><img src="https://api.travis-ci.org/Quantomatic/quantomatic.svg?branch=integration" /></a> )</li>
+    <li>or you can
+    <a href="https://github.com/Quantomatic/quantomatic">access the source code directly</a>.</li>
+  </ul>
 </p>
 
 <p>
@@ -53,8 +56,7 @@ cd ./scala
 sbt run
 </pre>
 
-<p>You will see a number of options once
-  <code>sbt run</code> is complete. Choose QuantoDerive to get the main GUI.
+<p>Note this assumes you want the latest development version. To get source for the latest stable version, remove <code>-b integration</code> from the <code>git clone</code> command above. You will see a number of options once <code>sbt run</code> is complete. Choose QuantoDerive to run the main GUI.
 </p>
 
 <h1>Sample projects</h1>
@@ -77,7 +79,7 @@ sbt run
     <a href="https://github.com/Quantomatic/zx-project" class="btn btn-default" role="button">Clone from GitHub &raquo;</a>
   </p>
   
-  <h3>
+  <!--h3>
     Clifford+T ZX-calculus project
   </h3>
 
@@ -100,7 +102,7 @@ sbt run
       <a href="https://github.com/Quantomatic/zx-project/archive/v1.1.zip" class="btn btn-default" role="button">
         <span class="glyphicon glyphicon-download-alt"></span> Download zip</a>
       <a href="https://github.com/Quantomatic/zx-project" class="btn btn-default" role="button">Clone from GitHub &raquo;</a>
-    </p>
+    </p>-->
     
 
 <h3>Bialgebra project</h3>
