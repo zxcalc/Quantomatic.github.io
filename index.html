@@ -295,7 +295,7 @@ sbt run
     <em>proc</em>edures, aka
     <em>simprocs</em> yet. These are little pieces of code that define a simplification strategy. On the left, open the
     <code>simprocs</code> folder and double-click
-    <code>basic_simp.ML</code>:</p>
+    <code>basic-simp.py</code>:</p>
 
   <img class="img-thumbnail center-block" src="images/screens/simproc.jpg" style="width:457px; height:301px" />
   <br />
@@ -303,33 +303,180 @@ sbt run
   <p>This one's as basic as they come. It loads a some rules from the project into a list called
     <code>simps</code>, then it will try to apply rules from
     <code>simps</code> until either it runs out of rules to apply, or you stop it. That's what
-    <code>REDUCE_ALL simps</code> does. Click the
+    <code>REDUCE(simps)</code> does. Click the
     <img src="images/gui/start.png" /> button in the toolbar to execute this code, which will
     <em>register</em> the procedure
-    <code>basic_simproc</code> with QuantoDerive. Now, go back to your derivation and click the refresh button:</p>
+    <code>basic-simp</code> with QuantoDerive. Now, go back to your derivation and click the refresh button:</p>
 
   <img class="img-thumbnail center-block" src="images/screens/refresh.jpg" />
   <br />
 
   <p>There it is, ready to go. Select
-    <code>basic_simp</code> and click play:</p>
+    <code>basic-simp</code> and click play:</p>
 
   <img class="img-thumbnail center-block" src="images/screens/basic_simp.jpg" style="width:457px; height:301px" />
   <br />
 
   <p>Well, that didn't get us very far. It is basic, after all. Go back to
     <code>simprocs</code> and open
-    <code>rotate_simp.ML</code> and execute it. Now, back in our derivation, click the refresh button again and run
-    <code>rotate_simp</code>.</p>
+    <code>rotate-simp.py</code> and execute it. Now, back in our derivation, click the refresh button again and run
+    <code>rotate-simp</code>.</p>
 
   <img class="img-thumbnail center-block" src="images/screens/rotate_simp.jpg" style="width:457px; height:301px" />
   <br />
 
   <p>That's better! Of course, your results may vary depending on what nodes you added earlier.</p>
 
-  <p>So, that's pretty much all there is to it. Play around with creating some new rules or even a new project. We'll be rolling
-    out support for more theories as development continues.</p>
+  <p>So, that's pretty much all there is to it. Play around with creating some new rules or even a new project.</p>
 
+
+  <h3>The simproc API</h3>
+
+  <p>Simplification procedures are implemented in Python, via a built-in interpreter in Quantomatic based in <a href="http://jython.org">jython</a>. The following is a (non-exhaustive) list of python bindings provided by Quantomatic, via the <code>quanto.util.Scripting</code> object. The API is a work-in-progress, and subject to change and/or expansion as more features from the simplifier are exposed. If you wish to get the most up-to-date look at what bindings are available, have a look at <a href="https://github.com/Quantomatic/quantomatic/blob/integration/scala/src/main/scala/quanto/util/Scripting.scala">the soure code</a>.</p>
+
+  <p>Generally, a simproc file will construct an object extending the class <code>quanto.rewrite.Simproc</code>, then register it with a name. When this simproc is called from the GUI, it will call the method <code>simp()</code>, which takes a graph as its input and returns a lazy list of rewrite steps. These steps consist of a new graph, as well as the matched rule which produced it. First some basic functions:</p>
+
+  <pre>
+    load_rule(path)
+      load a rule located in 'path'. Note this path is relative to the
+      project root, and the .qrule extension should be omitted.
+
+    load_rules(paths)
+      same, but takes a list of paths and returns a list of rules. In
+      other words, it is shorthand for 'map(load_rule, paths)'.
+
+    register_simproc(name, simproc)
+      takes a simproc object and registered with the given name. This
+      makes it available in the GUI simplifier.
+
+    load_graph(path)
+      load a graph located in 'path'. Again this path is relative to the
+      project root, and the .qgraph extension should be omitted. This is
+      rarely used in simprocs, but useful for testing or batch processing.
+
+    save_graph(graph, path)
+      save a graph to the given 'path'. Paths follow the same rules as
+      above.
+  </pre>
+
+
+  <p>The easiest way to construct a simproc object is to chain together some of the simpler, built-in simprocs into more complicated ones. Here's a list of the current built-in simprocs:</p>
+
+  <pre>
+    EMPTY
+      a trivial simproc which does nothing
+
+    REWRITE(rules)
+      takes a rule or list of rules and applies the first rule that
+      matches.
+
+    REWRITE_METRIC(rules, f)
+      takes a rule or list of rules and a function f from graphs to
+      integers. It will apply the first rule that matches *and*
+      (strictly) reduces the value of f.
+
+    REWRITE_WEAK_METRIC(rules, f)
+      same as above, except the rewrite only needs to be non-increasing
+      on f.
+
+    REWRITE_TARGETED(rule, v, f)
+      takes a rule, the name of a vertex 'v' within the rule (as a string),
+      and a targeting function 'f' from graphs to a vertex name. It will
+      apply the rule on a graph 'g' by first attempting to match 'v' on
+      'f(g)', then matching the rest.
+  </pre>
+
+  <p>Simprocs are combined via two combinators:</p>
+
+  <pre>
+    s >> t
+      apply simproc 's' until it produces no new rewrites, then apply 't'
+
+    REPEAT(s)
+      apply simproc 's' until it yields no new rewrites, then repeat until
+      applying 's' yields no rewrites at all.
+  </pre>
+
+  <p>It is so comment to wrap <code>REWRITE_XXXX</code> in <code>REPEAT</code> that certain shorthands have been introduced:</p>
+
+  <pre>
+    REDUCE(rules) := REPEAT(REWRITE(rules))
+
+    REDUCE_METRIC(rules, f) := REPEAT(REWRITE_METRIC(rules, f))
+
+    REDUCE_WEAK_METRIC(rules, f) := REPEAT(REWRITE_METRIC(rules, f))
+
+    REDUCE_TARGETED(rule, v, f) := REPEAT(REWRITE_TARGETED(rule, v, f))
+  </pre>
+
+  <p>That's basically it. Since the interpreter is <code>jython</code> under the hood, simprocs can access all of the data associated with graphs, vertices, etc. Here are a few methods of Quantomatic's <code>Graph</code> type which are handy for writing metrics or targeting functions:</p>
+
+  <pre>
+    graph.typeOf(v)
+      returns a string containing the type of the vertex, e.g. 'Z' or 'X'
+
+    graph.isBoundary(v)
+      returns true if the given vertex is a boundary
+
+    graph.isAdjacentToType(v, str)
+      returns true if the vertex is adjacent to a vertex of the given type
+
+    graph.isAdjacentToBoundary(v)
+      returns true if the given vertex is touching the boundary.
+  </pre>
+
+  <p>A couple of the built-in methods also have wrapper functions that enable more compact and 'pythonic' code to be written:</p>
+
+  <pre>
+    verts(graph)
+      return a list of vertices in the graph, in a python-iterable format.
+
+    vertex_angle_is(graph, v, str)
+      returns true if the angle of v is equal to the given string value.
+  </pre>
+
+
+  <p>You can see most of these functions in action in the simproc <code>rotate-simp.py</code>:
+
+  {% highlight python %}
+    simps0 = load_rules([
+      "axioms/red_copy", "axioms/green_copy",
+      "axioms/red_sp", "axioms/green_sp",
+      "axioms/hopf",
+      "axioms/red_scalar", "axioms/green_scalar",
+      "axioms/red_loop", "axioms/green_loop"])
+
+    simps = simps0 + load_rules(["axioms/green_id", "axioms/red_id"])
+
+    green_id_inv = load_rule("axioms/green_id").inverse()
+    red_id_inv = load_rule("axioms/red_id").inverse()
+    rotate = load_rule("theorems/rotate_targeted")
+
+    def num_boundary_X(g):
+      return len([v for v in verts(g)
+        if g.isBoundary(v) and g.isAdjacentToType(v, 'X')])
+
+    def next_rotation_Z(g):
+      vs = [(g.arity(v),v) for v in verts(g)
+        if g.typeOf(v) == 'Z' and
+           vertex_angle_is(g, v, '0') and
+           not g.isAdjacentToBoundary(v)]
+      if (len(vs) == 0): return None
+      else: return min(vs)[1]
+
+
+    simproc = (
+      REDUCE(simps) >>
+      REDUCE_METRIC(green_id_inv, num_boundary_X) >>
+      REPEAT(
+        REDUCE_TARGETED(rotate, "v10", next_rotation_Z) >>
+        REDUCE(simps0)
+      ) >>
+      REDUCE(simps)
+    )
+
+    register_simproc("rotate-simp", simproc)
+  {% endhighlight %}
 
   <!-- <h1>News</h1>
 <ul class="posts">
