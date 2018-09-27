@@ -11,7 +11,7 @@ title: Home
     <a href="papers.html">papers</a>). It allows users to draw diagrams and build up proofs using diagrammatic rewrite
     rules. It's easier to show you what that means than to tell you, so download it and try it out!</p>
   <p style="line-height: 2.5em">
-    <a href="https://bintray.com/quantomatic/quantomatic/download_file?file_path=release-0.6.1%2FQuantomatic.jar" class="btn btn-primary btn-lg" role="button">
+    <a href="https://github.com/Quantomatic/quantomatic/releases/download/v0.7/Quantomatic-v0.7.jar" class="btn btn-primary btn-lg" role="button">
       <span class="glyphicon glyphicon-download-alt"></span>Download JAR (all platforms)</a>
     <a href="https://github.com/Quantomatic/quantomatic" class="btn btn-lg btn-success" role="button">GitHub Project &raquo;</a>
   </p>
@@ -22,9 +22,7 @@ title: Home
 <p>
   You can choose between:
   <ul>
-    <li>the latest stable release (recommended): <a href="https://bintray.com/quantomatic/quantomatic/quantomatic/_latestVersion"><img src='https://api.bintray.com/packages/quantomatic/quantomatic/quantomatic/images/download.svg'></a></li>
-    <li>the latest development release: <a href='https://bintray.com/quantomatic/quantomatic/quantomatic/bleeding-edge/link'><img src='https://api.bintray.com/packages/quantomatic/quantomatic/quantomatic/images/download.svg?version=bleeding-edge'></a> (status: 
-  <a href="https://travis-ci.org/Quantomatic/quantomatic"><img src="https://api.travis-ci.org/Quantomatic/quantomatic.svg?branch=integration" /></a> )</li>
+    <li>the latest stable release (recommended): <a href="https://github.com/Quantomatic/quantomatic/releases/download/v0.7/Quantomatic-v0.7.jar">From GitHub</a></li>
     <li>or you can
     <a href="https://github.com/Quantomatic/quantomatic">access the source code directly</a>.</li>
   </ul>
@@ -326,7 +324,8 @@ The sample projects are now all hosted in the same repository on
   <!-- There is a button on the Quantomatic GUI that links to the Simproc API.
   If you move this information, please update where the button links to.
   It's the SimprocAPIAction in gui.QuantoDerive  -->
-  <h3 id="SimprocAPI">The simproc API</h3>
+  <div id="SimprocAPI" class="anchor"></div>
+  <h3>The simproc API</h3>
 
   <p>Simplification procedures are implemented in Python, via a built-in interpreter in Quantomatic based in <a href="http://jython.org">jython</a>. The following is a (non-exhaustive) list of python bindings provided by Quantomatic, via the <code>quanto.util.Scripting</code> object. The API is a work-in-progress, and subject to change and/or expansion as more features from the simplifier are exposed. If you wish to get the most up-to-date look at what bindings are available, have a look at <a href="https://github.com/Quantomatic/quantomatic/blob/integration/scala/src/main/scala/quanto/util/Scripting.scala">the soure code</a>.</p>
 
