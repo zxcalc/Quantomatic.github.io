@@ -16,7 +16,7 @@
   "node_vertices": {
     "v0": {
       "data": {
-        "type": "ZX_X",
+        "type": "ZX_Z",
         "value": "\\pi/4"
       },
       "annotation": {
