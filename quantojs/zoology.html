@@ -76,6 +76,8 @@
           <li><span tex="r \in R"></span> a commutative ring</li>
           <li>Complete for <em>any</em> commutative ring</li>
           <li>Two types of wire-crossing</li>
+          <li>"The" ZW-calculus refers to either <span tex="ZW_\mathbb{Z}"></span>
+            or to <span tex="ZW_{\{0\}}"></span>, which are equivalent</li>
           <li><a>wiki page</a></li>
         </ul>
       </div>
@@ -149,6 +151,7 @@
       <div class="notes">
         <ul>
           <li><a href="https://arxiv.org/abs/1706.09877">Complete</a></li>
+          <li>"The" ZX-calculus</li>
         </ul>
       </div>
     </div>
@@ -258,7 +261,7 @@
       </div>
     </div>
     <div class="clif cell cnot language">
-      <div class="title">Clifford Circuits</div>
+      <div class="title">Stabilizer Circuits</div>
       <div class="nodes">
         <div class="qgraph node wideNode" data-src="nodes/CNOT_CNOT"></div>
         <div class="nodeTitle">CNOT</div>
@@ -268,6 +271,21 @@
         <div class="nodeTitle">X</div>
       </div>
       <div class="notes">
+      </div>
+    </div>
+
+    <div class="other cell cnot language">
+      <div class="title">The Clifford Group</div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/CNOT_Zpi2"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/CNOT_Xpi2"></div>
+        <div class="nodeTitle">X</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li>For the Clifford+T group see <a href="https://arxiv.org/abs/1412.8553v1">Backens' thesis</a></li>
+        </ul>
       </div>
     </div>
 
@@ -285,6 +303,8 @@
         <ul>
           <li><span tex="z"></span> can be in any commutative ring, but we assume
             <span tex="z \in \mathbb{C}"></span></li>
+          <li>If <span tex="z = -1"></span> then the phase can be omitted.</li>
+
           <li>The generalised Hadamard is not to be confused with the lambda-boxes of ZX</li>
           <li><a>wiki page</a></li>
         </ul>
