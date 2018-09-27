@@ -1,0 +1,49 @@
+{
+  "bang_boxes": {
+    "bx0": {
+      "contents": [
+        "b0"
+      ]
+    },
+    "bx1": {
+      "contents": [
+        "b1"
+      ]
+    }
+  },
+  "wire_vertices": {
+    "b0": {
+      "annotation": {
+        "boundary": true,
+        "coord": [0, -1.5]
+      }
+    },
+    "b1": {
+      "annotation": {
+        "boundary": true,
+        "coord": [0, 1.5]
+      }
+    }
+  },
+  "node_vertices": {
+    "v0": {
+      "data": {
+        "type": "ZW_W",
+        "value": "r"
+      },
+      "annotation": {
+        "coord": [0, 0]
+      }
+    }
+  },
+  "undir_edges": {
+    "e0": {
+      "src": "v0",
+      "tgt": "b0"
+    },
+    "e1": {
+      "src": "b0",
+      "tgt": "b1"
+    }
+  }
+}

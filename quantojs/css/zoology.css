@@ -1,0 +1,94 @@
+#zoology {
+  display: grid;
+  column-gap: 1em;
+  row-gap: 1em;
+  margin: 2em;
+}
+
+.cell {
+  padding: 1em;
+}
+
+.header {
+  text-align: center;
+  grid-row: 1;
+}
+
+.zw {
+  grid-row: 2;
+}
+
+.zx {
+  grid-row: 4;
+}
+
+.cnot {
+  grid-row: 5;
+}
+
+.zh {
+  grid-row: 3;
+}
+
+.language {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.notes {
+  border-top: 1px solid #ddd;
+  padding: 2em;
+}
+
+.nodes {
+  display: grid;
+}
+
+.node {
+  grid-row: 1;
+}
+
+
+.title {
+  text-align: center;
+  padding: 1em;
+}
+
+.nodeTitle {
+  grid-row: 2;
+  text-align: center;
+  padding: 1em;
+}
+
+
+.node.qgraph {
+  border: 0px;
+  width: 120px;
+  overflow: auto;
+}
+
+.wideNode.qgraph {
+  border: 0px;
+  width: 180px;
+  overflow: auto;
+}
+
+.gen {
+  grid-column: 1;
+}
+
+.univ {
+  grid-column: 2;
+}
+
+.clift {
+  grid-column: 3;
+}
+
+.clif {
+  grid-column: 4;
+}
+
+.other {
+  grid-column: 5;
+}

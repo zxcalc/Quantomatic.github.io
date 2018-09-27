@@ -15,11 +15,14 @@
   <script src="js/d3.min.js"></script>
   <script src="js/texconstants.js"></script>
 
+  <script src="js/quanto.js"></script>
+  
+
   <!-- optionally include MathJax for tex math support -->
   <!-- <script src="/MathJax/MathJax.js?config=default"></script> -->
 </head>
 
-<body>
+<body onload="convertD3('./qderive-sample/red_green.qtheory')">
 
 <div class="container">
 
@@ -53,8 +56,5 @@
   </p>
 
 </div>
-
-<script src="js/quanto.js"></script>
-
 </body>
 </html>

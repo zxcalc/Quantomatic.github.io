@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<head>
+  <title>CQM Zoology</title>
+
+  <meta charset="utf-8" />
+  <meta name="quanto-project" content="qderive-zoology" />
+
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/quantojs.css" />
+  <link rel="stylesheet" href="css/zoology.css" />
+
+  <!-- required for quanto.js -->
+  <script src="js/d3.min.js"></script>
+  <script src="js/texconstants.js"></script>
+  <script src="js/quanto.js"></script>
+  <script>
+    quanto_options.originX = 0;
+    quanto_options.originY = 0;
+    quanto_options.scale = 30;
+  </script>
+
+
+  <!-- MatchJax -->
+  <!--
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>-->
+  <!-- KaTeX-->
+  <link rel="stylesheet" href="js/katex/katex.css">
+  <script src="js/katex/katex.js"></script>
+  <script>
+    window.onload = function () {
+      var elements = document.querySelectorAll("body *")
+      Array.prototype.forEach.call(elements, function (el) {
+        var tex = el.getAttribute("tex")
+        if (tex !== null && tex.length > 0) {
+          katex.render(tex, el);
+        }
+      })
+      convertD3('./qderive-zoology/all.qtheory')
+    }
+  </script>
+
+</head>
+
+<body>
+  <div class="title">
+    <h1>Categorical Quantum Mechanics Zoology</h1>
+    <h3>Diagrams are read bottom-to-top.</h2>
+  </div>
+  <div id="zoology">
+    <div class="header cell gen">General Form</div>
+    <div class="header cell univ">Universal Quantum Computation</div>
+    <div class="header cell clift">Approximately Universal</div>
+    <div class="header cell clif">Stabilizer</div>
+    <div class="header cell other">Other</div>
+
+    <!-- ZW -->
+    <div class="gen cell zw language">
+
+      <div class="title" tex="ZW_R">ZW_R</div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZW_W"></div>
+        <div class="nodeTitle">W</div>
+        <div class="qgraph node" data-src="nodes/ZW_X"></div>
+        <div class="nodeTitle">X</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><span tex="r \in R"></span> a commutative ring</li>
+          <li>Complete for <em>any</em> commutative ring</li>
+          <li>Two types of wire-crossing</li>
+          <li><a>wiki page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="univ cell zw language">
+
+      <div class="title" tex="ZW_{\mathbb{C}}"></div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZW_W"></div>
+        <div class="nodeTitle">W</div>
+        <div class="qgraph node" data-src="nodes/ZW_X"></div>
+        <div class="nodeTitle">X</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li>Used for <span tex="ZX_{[0,2\pi)}"></span> completeness</li>
+        </ul>
+      </div>
+    </div>
+    <div class="clift cell zw language">
+
+      <div class="title" tex="ZW_{\mathbb{Z}[\frac{1}{2}]}"></div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZW_W"></div>
+        <div class="nodeTitle">W</div>
+        <div class="qgraph node" data-src="nodes/ZW_X"></div>
+        <div class="nodeTitle">X</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li>Used for <span tex="ZX_{\pi/4}"></span> completeness</li>
+        </ul>
+      </div>
+    </div>
+    <!-- ZX -->
+    <div class="gen cell zx language">
+
+      <div class="title" tex="ZX_G"></div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZX_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/ZX_X"></div>
+        <div class="nodeTitle">X</div>
+        <div class="qgraph node" data-src="nodes/ZX_H"></div>
+        <div class="nodeTitle">Hadamard</div>
+        <div class="qgraph node" data-src="nodes/ZX_L"></div>
+        <div class="nodeTitle">Lambda box</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><span tex="\alpha \in G"></span> the phase group</li>
+          <li><span tex="\lambda \in \mathbb{C}">
+
+            </span> (lambda boxes are only used in the universal segment)</li>
+          <li>Empty boxes are assumed to be Hadamard nodes</li>
+          <li><a>wiki page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="univ cell zx language">
+
+      <div class="title" tex="ZX_{[0, 2 \pi)}"></div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZX_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/ZX_X"></div>
+        <div class="nodeTitle">X</div>
+        <div class="qgraph node" data-src="nodes/ZX_H"></div>
+        <div class="nodeTitle">Hadamard</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><a href="https://arxiv.org/abs/1706.09877">Complete</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clifft cell zx language">
+
+      <div class="title" tex="ZX_{\pi/4}"></div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZX_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/ZX_X"></div>
+        <div class="nodeTitle">X</div>
+        <div class="qgraph node" data-src="nodes/ZX_H"></div>
+        <div class="nodeTitle">Hadamard</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><a href="https://arxiv.org/abs/1705.11151">Complete</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cliff cell zx language">
+
+      <div class="title" tex="ZX_{\pi/2}"></div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZX_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/ZX_X"></div>
+        <div class="nodeTitle">X</div>
+        <div class="qgraph node" data-src="nodes/ZX_H"></div>
+        <div class="nodeTitle">Hadamard</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><a href="https://arxiv.org/abs/1307.7025">Complete</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="other cell zx language">
+
+      <div class="title" tex="ZX_{C_2 \times C_2}"></div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZX_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/ZX_X"></div>
+        <div class="nodeTitle">X</div>
+        <div class="qgraph node" data-src="nodes/ZX_H"></div>
+        <div class="nodeTitle">Hadamard</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li>Spekkens' Toy Theory</li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- CNOT -->
+    <div class="gen cell cnot language">
+
+      <div class="title">Circuits</div>
+      <div class="nodes">
+        <div class="qgraph node wideNode" data-src="nodes/CNOT_CNOT"></div>
+        <div class="nodeTitle">CNOT</div>
+        <div class="qgraph node" data-src="nodes/CNOT_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/CNOT_X"></div>
+        <div class="nodeTitle">X</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li>Various sets of generators exist</li>
+          <li>It can be convenient to distinguish between up-down rails and side-side bridges</li>
+          <li><a>wiki page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="univ cell cnot language">
+
+      <div class="title">Exact Universal Circuits</div>
+      <div class="nodes">
+        <div class="qgraph node wideNode" data-src="nodes/CNOT_CNOT"></div>
+        <div class="nodeTitle">CNOT</div>
+        <div class="qgraph node" data-src="nodes/CNOT_X"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/CNOT_Z"></div>
+        <div class="nodeTitle">X</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><span tex="\alpha \in [0,2\pi)" /></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clift cell cnot language">
+
+      <div class="title">Clifford+T Circuits</div>
+      <div class="nodes">
+        <div class="qgraph node wideNode" data-src="nodes/CNOT_CNOT"></div>
+        <div class="nodeTitle">CNOT</div>
+        <div class="qgraph node" data-src="nodes/CNOT_Zpi2"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/CNOT_Xpi2"></div>
+        <div class="nodeTitle">X</div>
+        <div class="qgraph node" data-src="nodes/CNOT_T"></div>
+        <div class="nodeTitle">T</div>
+      </div>
+      <div class="notes">
+      </div>
+    </div>
+    <div class="clif cell cnot language">
+      <div class="title">Clifford Circuits</div>
+      <div class="nodes">
+        <div class="qgraph node wideNode" data-src="nodes/CNOT_CNOT"></div>
+        <div class="nodeTitle">CNOT</div>
+        <div class="qgraph node" data-src="nodes/CNOT_Zpi2"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/CNOT_Xpi2"></div>
+        <div class="nodeTitle">X</div>
+      </div>
+      <div class="notes">
+      </div>
+    </div>
+
+    <!-- ZH -->
+    <div class="gen cell zh language">
+
+      <div class="title">ZH</div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZH_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/ZH_H"></div>
+        <div class="nodeTitle">Generalised Hadamard</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><span tex="z"></span> can be in any commutative ring, but we assume
+            <span tex="z \in \mathbb{C}"></span></li>
+          <li>The generalised Hadamard is not to be confused with the lambda-boxes of ZX</li>
+          <li><a>wiki page</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="univ cell zh language">
+
+      <div class="title">ZH</div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZH_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/ZH_H"></div>
+        <div class="nodeTitle">Generalised Hadamard</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><span tex="z \in \mathbb{C}" /></li>
+          <li><a href="https://arxiv.org/abs/1805.02175">Complete</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+
+
+    <div class="clift cell zh language">
+
+      <div class="title">Approximate ZH</div>
+      <div class="nodes">
+        <div class="qgraph node" data-src="nodes/ZH_Z"></div>
+        <div class="nodeTitle">Z</div>
+        <div class="qgraph node" data-src="nodes/ZH_H"></div>
+        <div class="nodeTitle">Generalised Hadamard</div>
+      </div>
+      <div class="notes">
+        <ul>
+          <li><span tex="z \in \mathbb{Z}[i, \sqrt{2}]"></span></li>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <!-- End of grid-->
+  </div>
+</body>
